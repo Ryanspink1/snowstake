@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171116000252) do
+ActiveRecord::Schema.define(version: 20171116230832) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,8 @@ ActiveRecord::Schema.define(version: 20171116000252) do
     t.text "period_five_night_wind_speed"
     t.text "period_five_night_wind_dir"
     t.text "period_five_night_temp"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.index ["resort_id"], name: "index_forecasts_on_resort_id"
   end
 
@@ -89,6 +91,14 @@ ActiveRecord::Schema.define(version: 20171116000252) do
     t.text "open_snow_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "state_id"
+    t.index ["state_id"], name: "index_resorts_on_state_id"
   end
 
+  create_table "states", force: :cascade do |t|
+    t.text "name"
+    t.text "abbreviation"
+  end
+
+  add_foreign_key "resorts", "states"
 end
