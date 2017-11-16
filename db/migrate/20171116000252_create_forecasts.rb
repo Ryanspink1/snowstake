@@ -65,6 +65,8 @@ class CreateForecasts < ActiveRecord::Migration[5.1]
       t.text :period_five_night_wind_speed
       t.text :period_five_night_wind_dir
       t.text :period_five_night_temp
+
+      t.timestamps
     end
   end
 end
