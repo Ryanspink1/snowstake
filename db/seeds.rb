@@ -2,39 +2,51 @@ class Seed
   def self.start
     seed = Seed.new
     seed.destroy_data
+    seed.seed_states
     seed.seed_resorts
     seed.seed_forecasts
   end
 
   def initialize
     @resorts = [
-      [1, "Arapahoe Basin", "https://www.arapahoebasin.com/webcams/abasincam6000m.jpg", "2"],
-      [2, "Aspen Snowmass", "https://www.aspensnowmass.com/CamImages/Snow_Stake_Cam.jpg", "24"],
-      [3, "Beaver Creek", "http://common.snow.com/Mtncams/bcsnowstake.jpg", "5"],
-      [4, "Breckenridge", "http://common.snow.com/Mtncams/brecksnowstake.jpg", "6"],
-      [5, "Copper Mountain","https://b7b.hdrelay.com/cameras/fb469125-f1f3-459f-aeb4-98cb674e395f/GetOneShot?size=800x450&f=300000", "7"],
-      [6, "Crested Butte","http://skicb.server310.com/ftp/powcam/pow.jpg", "8"],
-      [7, "Keystone","http://common.snow.com/Mtncams/KeySnowStake.jpg", "3"],
-      [8, "Loveland","http://photosskiloveland.com/Report/15minutes/data.jpg", "1"],
-      [9, "Powderhorn", "http://www.powderhorn.com/cams/netcam1-000001.jpg", "12"],
-      [10, "Steamboat","https://b7b.hdrelay.com/cameras/e12dbfe2-9359-4b93-a8ce-b5e461b681d1/GetOneShot?size=1920x1080&f=300000", "13"],
-      [11, "Telluride","http://www.tellurideskiresort.com/webcams/powcam.jpg", "14"],
-      [12, "Vail","http://common.snow.com/Mtncams/vailsnowstake.jpg", "15"],
-      [13, "Winter Park","http://cams.winterparkresort.com/snow-stake-cam.jpg", "16"],
+      [1, "Arapahoe Basin", "https://www.arapahoebasin.com/webcams/abasincam6000m.jpg", "2", 1],
+      [2, "Aspen Snowmass", "https://www.aspensnowmass.com/CamImages/Snow_Stake_Cam.jpg", "24", 1],
+      [3, "Beaver Creek", "http://common.snow.com/Mtncams/bcsnowstake.jpg", "5", 1],
+      [4, "Breckenridge", "http://common.snow.com/Mtncams/brecksnowstake.jpg", "6", 1],
+      [5, "Copper Mountain","https://b7b.hdrelay.com/cameras/fb469125-f1f3-459f-aeb4-98cb674e395f/GetOneShot?size=800x450&f=300000", "7", 1],
+      [6, "Crested Butte","http://skicb.server310.com/ftp/powcam/pow.jpg", "8", 1],
+      [7, "Keystone","http://common.snow.com/Mtncams/KeySnowStake.jpg", "3", 1],
+      [8, "Loveland","http://photosskiloveland.com/Report/15minutes/data.jpg", "1", 1],
+      [9, "Powderhorn", "http://www.powderhorn.com/cams/netcam1-000001.jpg", "12", 1],
+      [10, "Steamboat","https://b7b.hdrelay.com/cameras/e12dbfe2-9359-4b93-a8ce-b5e461b681d1/GetOneShot?size=1920x1080&f=300000", "13", 1],
+      [11, "Telluride","http://www.tellurideskiresort.com/webcams/powcam.jpg", "14", 1],
+      [12, "Vail","http://common.snow.com/Mtncams/vailsnowstake.jpg", "15", 1],
+      [13, "Winter Park","http://cams.winterparkresort.com/snow-stake-cam.jpg", "16", 1],
     ]
     @api_key = ENV["open_snow_key"]
+    @states =
+    [
+      [1, "Colorado", "CO"]
+    ]
   end
 
   def destroy_data
+    State.destroy_all
     Resort.destroy_all
     Forecast.destroy_all
   end
 
+  # States Seed
+  def seed_states
+    @states.each do |id, state, abbreviation|
+      State.create(id: id, name: state, abbreviation: abbreviation)
+    end
+  end
   # Resorts Seed
 
   def seed_resorts
     @resorts.each do |resort|
-      Resort.create(id: resort[0], name: resort[1], snowstake_url: resort[2], open_snow_id: resort[3])
+      Resort.create(id: resort[0], name: resort[1], snowstake_url: resort[2], open_snow_id: resort[3], state_id: resort[4])
       puts "created #{resort[1]}"
     end
   end

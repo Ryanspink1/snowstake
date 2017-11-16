@@ -13,5 +13,6 @@ RSpec.describe Resort, type: :model do
 
   context "relationships" do
     it { should have_one(:forecast) }
+    it { should belong_to(:state) }
   end
 end
