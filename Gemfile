@@ -59,6 +59,7 @@ group :test do
   gem 'fabrication'
   gem 'vcr'
   gem 'webmock'
+  gem 'selenium-webdriver', '~> 2.53.4'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
