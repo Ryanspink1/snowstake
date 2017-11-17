@@ -1,3 +1,4 @@
+
 function getStateData(){
   $.ajax({
     url: `/api/v1/states`,

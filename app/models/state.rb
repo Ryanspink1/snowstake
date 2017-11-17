@@ -3,11 +3,13 @@ class State < ApplicationRecord
 
   validates :name,
             :abbreviation,
+            :picture_url,
 
             presence: true
 
   validates :name,
             :abbreviation,
+            :picture_url,
 
             uniqueness: true
 
