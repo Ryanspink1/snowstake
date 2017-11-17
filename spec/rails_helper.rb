@@ -12,10 +12,18 @@ require 'simplecov'
 require 'webmock/rspec'
 require 'vcr'
 
+Capybara.register_driver :selenium do |app|
+  Capybara::Selenium::Driver.new(
+    app,
+    browser: :firefox,
+    desired_capabilities: Selenium::WebDriver::Remote::Capabilities.firefox(marionette: false)
+  )
+end
 
 VCR.configure do |config|
   config.cassette_library_dir = "spec/cassettes"
   config.hook_into :webmock
+  config.allow_http_connections_when_no_cassette = true
 end
 
 SimpleCov.start
