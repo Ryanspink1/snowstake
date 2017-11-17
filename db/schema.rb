@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171116230832) do
+ActiveRecord::Schema.define(version: 20171117074740) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 20171116230832) do
   create_table "states", force: :cascade do |t|
     t.text "name"
     t.text "abbreviation"
+    t.text "picture_url"
   end
 
   add_foreign_key "resorts", "states"
