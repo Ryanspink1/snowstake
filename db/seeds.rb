@@ -26,20 +26,22 @@ class Seed
     @api_key = ENV["open_snow_key"]
     @states =
     [
-      [1, "Colorado", "CO"]
+      [1, "Colorado", "CO", "https://s3-us-west-2.amazonaws.com/snowstake/states/colorado-black-state-shape-md.png"],
+      [2, "California", "CA", "https://s3-us-west-2.amazonaws.com/snowstake/states/black-cali-md.png"],
+      [3, "Utah", "UT", "https://s3-us-west-2.amazonaws.com/snowstake/states/ut-outline.png"]
     ]
   end
 
   def destroy_data
-    State.destroy_all
     Resort.destroy_all
     Forecast.destroy_all
+    State.destroy_all
   end
 
   # States Seed
   def seed_states
-    @states.each do |id, state, abbreviation|
-      State.create(id: id, name: state, abbreviation: abbreviation)
+    @states.each do |id, state, abbreviation, picture|
+      State.create(id: id, name: state, abbreviation: abbreviation, picture_url: picture)
     end
   end
 
