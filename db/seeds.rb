@@ -42,8 +42,8 @@ class Seed
       State.create(id: id, name: state, abbreviation: abbreviation)
     end
   end
-  # Resorts Seed
 
+  # Resorts Seed
   def seed_resorts
     @resorts.each do |resort|
       Resort.create(id: resort[0], name: resort[1], snowstake_url: resort[2], open_snow_id: resort[3], state_id: resort[4])
@@ -52,7 +52,6 @@ class Seed
   end
 
   # Forecasts Seed
-
   def seed_forecasts
     forecasts = get_forecasts
     forecasts.each do |forecast|

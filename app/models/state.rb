@@ -3,7 +3,7 @@ class State < ApplicationRecord
 
   validates :name,
             :abbreviation,
-            
+
             presence: true
 
   validates :name,
@@ -11,4 +11,7 @@ class State < ApplicationRecord
 
             uniqueness: true
 
+  def self.all_states
+    all
+  end
 end
