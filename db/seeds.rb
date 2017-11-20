@@ -21,14 +21,23 @@ class Seed
       [10, "Steamboat","https://b7b.hdrelay.com/cameras/e12dbfe2-9359-4b93-a8ce-b5e461b681d1/GetOneShot?size=1920x1080&f=300000", "13", 1],
       [11, "Telluride","http://www.tellurideskiresort.com/webcams/powcam.jpg", "14", 1],
       [12, "Vail","http://common.snow.com/Mtncams/vailsnowstake.jpg", "15", 1],
-      [13, "Winter Park","http://cams.winterparkresort.com/snow-stake-cam.jpg", "16", 1],
+      [13, "Winter Park","http://cams.winterparkresort.com/snow-stake-cam.jpg", "16", 1]
+      # [14, "Alta", "", "39", 3],
+      # [15, "Solitude", "", "38", 3],
+      # [16, "Snowbird", "https://www.snowbird.com/webcams/SnowCam_main.jpg", "40", 3],
+      # [17, "Park City/Canyons", "http://common.snow.com/Mtncams/PCSnowStake.jpg", "41", 3],
+      # [18, "Brighton", "", "37", 3],
+      # [19, "Heavenly", "http://common.snow.com/Mtncams/HeavenlySnowStake.jpg", "135", 2],
+      # [20, "Kirkwood", "", "142", 2],
+      # [21, "Squaw Valley", "", "141", 2],
+      # [22, "Northstar", "", "138", 2],
     ]
     @api_key = ENV["open_snow_key"]
     @states =
     [
-      [1, "Colorado", "CO", "https://s3-us-west-2.amazonaws.com/snowstake/states/colorado-black-state-shape-md.png"],
-      [2, "California", "CA", "https://s3-us-west-2.amazonaws.com/snowstake/states/black-cali-md.png"],
-      [3, "Utah", "UT", "https://s3-us-west-2.amazonaws.com/snowstake/states/ut-outline.png"]
+      [1, "Colorado", "CO", "https://s3-us-west-2.amazonaws.com/snowstake/states/colorado-black-state-shape-md.png", "https://radar.weather.gov/ridge/lite/N0R/FTG_loop.gif", "https://twitter.com/ColoradoDOT?ref_src=twsrc%5Etfw"],
+      [2, "California", "CA", "https://s3-us-west-2.amazonaws.com/snowstake/states/black-cali-md.png", "https://radar.weather.gov/ridge/lite/N0R/RGX_loop.gif", "https://twitter.com/CaltransDist3?ref_src=twsrc%5Etfw"],
+      [3, "Utah", "UT", "https://s3-us-west-2.amazonaws.com/snowstake/states/ut-outline.png", "https://radar.weather.gov/ridge/lite/N0R/MTX_loop.gif", "https://twitter.com/UDOTRegionTwo?ref_src=twsrc%5Etfw"]
     ]
   end
 
@@ -40,8 +49,8 @@ class Seed
 
   # States Seed
   def seed_states
-    @states.each do |id, state, abbreviation, picture|
-      State.create(id: id, name: state, abbreviation: abbreviation, picture_url: picture)
+    @states.each do |id, state, abbreviation, picture, radar, twitter|
+      State.create(id: id, name: state, abbreviation: abbreviation, picture_url: picture, radar_url: radar, twitter_url:twitter)
     end
   end
 

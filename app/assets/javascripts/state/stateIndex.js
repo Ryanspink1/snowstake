@@ -15,14 +15,14 @@ function appendStates(states){
   states.forEach(function(state){
     $('#states-index-container').append(
       `
-      <div class="state-index-item">
+      <div class="state-index-item" onclick="window.location='/states/${state.name}'">
         <div class="state-index-item-header">
           <span class="image-text">
             ${state.name}
           </span>
         </div>
         <div class="state-index-item-picture">
-          <img id="event-cover-image" src=${state.picture_url} class="img-thumbnail">
+          <img id="state-index-item-image" src=${state.picture_url} class="img-thumbnail">
         </div>
       </div>
       `
