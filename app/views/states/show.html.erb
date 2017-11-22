@@ -1,0 +1,22 @@
+<%= render 'navbar/navbar' %>
+<div class="container" id="state-show-header-container">
+  <div class="row justify-content-center" style="width:`auto`">
+    <div class="col-12" id="state-show-header">
+      <div id="state-show-message">
+      </div>
+    </div>
+  </div>
+</div>
+<div id="state-directory-container">
+</div>
+
+<%= render 'partials/states/radar_modal' %>
+<%= render 'partials/states/all_snow_stakes_modal' %>
+<%= render 'partials/states/quick_forecasts_modal' %>
+<%= render 'partials/states/transportation_twitter_modal' %>
+<%= render 'partials/states/resorts_modal' %>
+
+
+<script>
+  $(document).ready(getResorts())
+</script>
