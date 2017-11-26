@@ -2,11 +2,11 @@ require 'rails_helper'
 
 describe "states API" do
   it "returns each state" do
-    VCR.use_cassette("states/states_endpoint") do
+    VCR.use_cassette("states/each_state") do
       Fabricate(:state, id:1, name:"Ohio", abbreviation: "OH", picture_url: "www.ohio.com")
       Fabricate(:state, id:2, name:"Mississippi", abbreviation: "MS", picture_url: "www.mississippi.com")
       Fabricate(:state, id:3, name:"Arizona", abbreviation: "AZ", picture_url: "www.arizona.com")
-
+      
       get '/api/v1/states'
 
       expect(response).to be_success

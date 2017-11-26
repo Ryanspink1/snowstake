@@ -72,7 +72,7 @@ function populateAllSnowStakesModal(data){
     $("#all-snow-stakes-modal-body").append(
       `
         <h3 style="background-color:#000066;color:white; text-align:center;">${resort.name}</h3>
-        <img id="event-cover-image" src="${resort.snowstake_url}?${Math.floor((Math.random() * 1000) + 1).toString()}" class="img-thumbnail" style="width:90vw;">
+        <img id="all-snow-stakes-cover-image" src="${resort.snowstake_url}?${Math.floor((Math.random() * 1000) + 1).toString()}" class="img-thumbnail" style="width:90vw;">
         <br>
         <br>
       `
@@ -106,7 +106,7 @@ function populateQuickForecastsModalBody(resorts){
     $("#quick-forecasts-table-body").append(
       `
       <tr>
-        <td><strong>${resort.name}</strong></td>
+        <td id="forecast-modal-sticky-name"><strong>${resort.name}</strong></td>
         <td>${resort.period_one_day_snow}"</td>
         <td>${resort.period_one_night_snow}"</td>
         <td>${resort.period_two_day_snow}"</td>
@@ -121,7 +121,6 @@ function populateQuickForecastsModalBody(resorts){
       `
     )
   })
-
 }
 
 function populateTransportationTwitterModal(twitter_url){

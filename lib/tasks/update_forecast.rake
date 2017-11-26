@@ -1,4 +1,3 @@
-
 require 'rake'
 
 task :update_forecast => :environment do
@@ -6,11 +5,16 @@ task :update_forecast => :environment do
 
     def self.start
       updater = UpdateForecast.new
+      updater.clear_cache
       updater.update
     end
 
     def initialize
       @api_key = ENV["open_snow_key"]
+    end
+
+    def clear_cache
+      Rails.cache.clear
     end
 
     def update
@@ -86,7 +90,7 @@ task :update_forecast => :environment do
     end
 
     def get_forecasts
-      conn = Faraday.new(url: "https://peaceful-beach-96299.herokuapp.com/http://opensnow.com/api/public/1.0/locations/data?apikey=#{@api_key}&lids=2,24,5,6,7,8,3,1,12,13,14,15,16&type=json", headers: {'Origin' => 'www.google.com'})
+      conn = Faraday.new(url: "https://peaceful-beach-96299.herokuapp.com/http://opensnow.com/api/public/1.0/locations/data?apikey=#{@api_key}&lids=2,24,5,6,7,8,3,1,12,13,14,15,16,37,38,39,40,41,135,142,141,138&type=json", headers: {'Origin' => 'www.google.com'})
       response = conn.get
       forecasts = JSON.parse(response.body, symbolize_names: true)[:results]
       forecasts

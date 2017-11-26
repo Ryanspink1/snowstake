@@ -21,16 +21,16 @@ class Seed
       [10, "Steamboat","https://b7b.hdrelay.com/cameras/e12dbfe2-9359-4b93-a8ce-b5e461b681d1/GetOneShot?size=1920x1080&f=300000", "13", 1],
       [11, "Telluride","http://www.tellurideskiresort.com/webcams/powcam.jpg", "14", 1],
       [12, "Vail","http://common.snow.com/Mtncams/vailsnowstake.jpg", "15", 1],
-      [13, "Winter Park","http://cams.winterparkresort.com/snow-stake-cam.jpg", "16", 1]
-      # [14, "Alta", "", "39", 3],
-      # [15, "Solitude", "", "38", 3],
-      # [16, "Snowbird", "https://www.snowbird.com/webcams/SnowCam_main.jpg", "40", 3],
-      # [17, "Park City/Canyons", "http://common.snow.com/Mtncams/PCSnowStake.jpg", "41", 3],
-      # [18, "Brighton", "", "37", 3],
-      # [19, "Heavenly", "http://common.snow.com/Mtncams/HeavenlySnowStake.jpg", "135", 2],
-      # [20, "Kirkwood", "", "142", 2],
-      # [21, "Squaw Valley", "", "141", 2],
-      # [22, "Northstar", "", "138", 2],
+      [13, "Winter Park","http://cams.winterparkresort.com/snow-stake-cam.jpg", "16", 1],
+      [14, "Alta", "https://media.alta.com/resources/mtncam/altafull.jpg", "39", 3],
+      [15, "Solitude", "https://webcams.solitudemountain.com/mbl.jpg?_ga=2.48813286.1553116106.1508883078-1005990490.1496752453&_gac=1.95231214.1508897104.CLHvrN3XitcCFYRGXgodDmMBHw", "38", 3],
+      [16, "Snowbird", "https://www.snowbird.com/webcams/SnowCam_main.jpg", "40", 3],
+      [17, "Park City/Canyons", "http://common.snow.com/Mtncams/PCSnowStake.jpg", "41", 3],
+      [18, "Brighton", "http://www.brightonresort.com/img/Image/webcam/ww.jpg", "37", 3],
+      [19, "Heavenly", "http://common.snow.com/Mtncams/HeavenlySnowStake.jpg", "135", 2],
+      [20, "Kirkwood", "http://common.snow.com/Mtncams/kwSnowStake.jpg", "142", 2],
+      [21, "Squaw Valley", "http://storage.googleapis.com/prism-cam-00016/2017/11/22/00-06/720.jpg", "141", 2],
+      [22, "Northstar", "http://common.snow.com/Mtncams/nsSnowStake.jpg", "138", 2]
     ]
     @api_key = ENV["open_snow_key"]
     @states =
@@ -42,6 +42,7 @@ class Seed
   end
 
   def destroy_data
+    Rails.cache.clear
     Resort.destroy_all
     Forecast.destroy_all
     State.destroy_all
@@ -136,7 +137,7 @@ class Seed
   end
 
   def get_forecasts
-    conn = Faraday.new(url: "https://peaceful-beach-96299.herokuapp.com/http://opensnow.com/api/public/1.0/locations/data?apikey=#{@api_key}&lids=2,24,5,6,7,8,3,1,12,13,14,15,16&type=json", headers: {'Origin' => 'www.google.com'})
+    conn = Faraday.new(url: "https://peaceful-beach-96299.herokuapp.com/http://opensnow.com/api/public/1.0/locations/data?apikey=#{@api_key}&lids=2,24,5,6,7,8,3,1,12,13,14,15,16,37,38,39,40,41,135,142,141,138&type=json", headers: {'Origin' => 'www.google.com'})
     response = conn.get
     forecasts = JSON.parse(response.body, symbolize_names: true)[:results]
     forecasts
