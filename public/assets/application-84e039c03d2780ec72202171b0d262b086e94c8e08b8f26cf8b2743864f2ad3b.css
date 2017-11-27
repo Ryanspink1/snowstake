@@ -1,0 +1,327 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+
+ */
+
+/*State Index*/
+
+#state-index-header{
+  text-align: center;
+  background-color:#000066;
+  color:white;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#states-index-container{
+  text-align: center;
+  width:90vw;
+  margin-left:5vw;
+  margin-right:5vw;
+}
+
+.state-index-item{
+  display: inline-block;
+  text-align:center;
+  margin-top: 5vh;
+  margin-left:2vh;
+  margin-right: 2vh;
+  width: 30vw;
+  border:1px solid #D5D7DB;
+  border-radius: 7px 7px 7px 7px;
+}
+.state-index-item:hover{
+  cursor: pointer;
+  box-shadow: 3px 3px 7px #848f94;
+}
+
+.state-index-item-header{
+  color: white;
+  background-color:#000066;
+  border-radius: 7px 7px 0px 0px;
+}
+
+.image-text {
+}
+
+#state-index-item-image {
+  width:inherit;
+  height: 15vh;
+  border:none;
+}
+
+/*State Show */
+
+#state-show-header{
+  text-align: center;
+  background-color:#000066;
+  color:white;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#state-directory-container{
+  text-align: center;
+  width:90vw;
+  margin-left:5vw;
+  margin-right:5vw;
+}
+
+.state-directory-item{
+  display: inline-block;
+  text-align:center;
+  margin-top: 5vh;
+  margin-left:2vh;
+  margin-right: 2vh;
+  width: 30vw;
+  border:1px solid #D5D7DB;
+  border-radius: 7px 7px 7px 7px;
+}
+.state-directory-item:hover{
+  cursor: pointer;
+  box-shadow: 3px 3px 7px #848f94;
+}
+
+.state-directory-item-header{
+  color: white;
+  background-color:#000066;
+  border-radius: 7px 7px 0px 0px;
+}
+
+.image-text {
+}
+
+#state-directory-item-image {
+  width:inherit;
+  height: 15vh;
+  border:none;
+}
+
+#all-snow-stakes-modal-body{
+  width:100%;
+  height: 75vh;
+  overflow: scroll;
+}
+
+#quick-forecasts-table-container{
+  overflow-x: auto;
+}
+
+table, th, td{
+  text-align: left;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+#quick-forecasts-table{
+  width: 100%;
+}
+
+#quick-forecasts-table th,td{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+
+#transportation-twitter-container{
+  width:100%;
+  height: 75vh;
+  overflow: scroll;
+}
+
+#radar-container{
+  /*width:100%;
+  height: 75vh;
+  overflow: scroll;*/
+}
+
+.toggle-container{
+  visibility: hidden;
+}
+
+.resorts-instance{
+  width:100%;
+  /*border:1px solid #D5D7DB;
+  border-radius: 7px 7px 0px 0px;*/
+}
+
+.resorts-instance-header{
+  text-align: center;
+  color: white;
+  background-color:#000066;
+  width:100%;
+  border-radius: 7px 7px 7px 7px;
+}
+.resorts-instance-header:hover{
+  cursor: pointer;
+  box-shadow: 3px 3px 7px #848f94;
+}
+
+#resorts-instance-body{
+  margin-top:0vh;
+  margin-left:1vw;
+  margin-right:1vw;
+  margin-bottom:2vh;
+  border:1px solid #D5D7DB;
+  border-radius: 7px 7px 7px 7px;
+
+}
+
+#resorts-modal-body{
+  width:100%;
+  height: 75vh;
+  overflow: scroll;
+}
+
+#resort-modal-header{
+  text-align:center;
+}
+
+.link-to-resort-show{
+  text-align: center;
+  color: white;
+  background-color:#000066;
+  border-radius: 2px 2px 2px 2px;
+}
+
+.link-to-resort-show:hover{
+  cursor: pointer;
+  box-shadow: 3px 3px 7px #848f94;
+}
+
+#resort-modal-header-column{
+  margin-top: 1vh;
+  margin-bottom: 2vh;
+}
+
+#resort-snow-stake-picture-row{
+  margin-bottom: 2vh;
+}
+
+.resort-snow-stake-picture-header{
+  text-align:center;
+  color: white;
+  background-color:#000066;
+}
+
+.current-conditions-table-name{
+  text-align:center;
+  color: white;
+  background-color:#000066;
+}
+
+.active{
+  background-color: #4d4d4d;
+  color: white;
+  border-radius: 7px 7px 0px 0px;
+}
+
+#resort-forecast-row{
+  margin-top:2vh;
+}
+
+.resort-forecast-table-name{
+  text-align:center;
+  color: white;
+  background-color:#000066;
+}
+
+#resort-forecast-table-container{
+  /*overflow-x: auto;*/
+}
+
+.resort-forecast-only-table-container{
+  overflow-x: auto;
+}
+
+#resort-forecast-table{
+  width:100%;
+}
+
+#resort-forecasts-table th,td{
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+
+/*Resorts*/
+
+#resort-show-header{
+  text-align: center;
+  background-color:#000066;
+  color:white;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#resort-show-picture{
+  margin-top:5vh;
+  width:60vw;
+  color: white;
+  border:1px solid #D5D7DB;
+  border-radius: 7px 7px 7px 7px;
+}
+#resort-show-picture-header{
+  width: auto;
+  border-radius: 7px 7px 0px 0px;
+  text-align:center;
+  background-color:#000066;
+  color:white;
+}
+
+#resort-show-picture-body{
+  padding-top:1vh;
+  padding-bottom:1vh;
+  padding-left:1vh;
+  padding-right:1vh;
+  text-align:center;
+}
+
+#resort-stake-image{
+  max-height: 70vh;
+}
+
+#resort-current-conditions{
+  margin-top:5vh;
+}
+
+#resort-current-conditions-header{
+  /*width: auto;*/
+  border-radius: 7px 7px 0px 0px;
+  text-align:center;
+  background-color:#000066;
+  color:white;
+}
+
+#resort-current-conditions-body{
+
+}
+
+#resort-current-conditions-table{
+  width:30vw;
+}
+
+#resort-show-forecast{
+  margin-top: 5vh;
+}
+
+#resort-show-forecast-header{
+  border-radius: 7px 7px 0px 0px;
+  text-align:center;
+  background-color:#000066;
+  color:white;
+}
+#resort-show-forecast-body{
+  overflow: scroll;
+}
