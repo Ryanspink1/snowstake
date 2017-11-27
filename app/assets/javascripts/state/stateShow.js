@@ -106,7 +106,7 @@ function populateQuickForecastsModalBody(resorts){
     $("#quick-forecasts-table-body").append(
       `
       <tr>
-        <td id="forecast-modal-sticky-name"><strong>${resort.name}</strong></td>
+        <td id="forecast-modal-sticky-name"><a href="/states/${state_name}/resorts/${resort.name}">${resort.name}</a></td>
         <td>${resort.period_one_day_snow}"</td>
         <td>${resort.period_one_night_snow}"</td>
         <td>${resort.period_two_day_snow}"</td>

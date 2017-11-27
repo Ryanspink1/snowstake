@@ -252,3 +252,75 @@ table, th, td{
   padding-left: 5px;
   padding-right: 5px;
 }
+
+
+/*Resorts*/
+
+#resort-show-header{
+  text-align: center;
+  background-color:#000066;
+  color:white;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+
+#resort-show-picture{
+  margin-top:5vh;
+  width:60vw;
+  color: white;
+  border:1px solid #D5D7DB;
+  border-radius: 7px 7px 7px 7px;
+}
+#resort-show-picture-header{
+  width: auto;
+  border-radius: 7px 7px 0px 0px;
+  text-align:center;
+  background-color:#000066;
+  color:white;
+}
+
+#resort-show-picture-body{
+  padding-top:1vh;
+  padding-bottom:1vh;
+  padding-left:1vh;
+  padding-right:1vh;
+  text-align:center;
+}
+
+#resort-stake-image{
+  max-height: 70vh;
+}
+
+#resort-current-conditions{
+  margin-top:5vh;
+}
+
+#resort-current-conditions-header{
+  /*width: auto;*/
+  border-radius: 7px 7px 0px 0px;
+  text-align:center;
+  background-color:#000066;
+  color:white;
+}
+
+#resort-current-conditions-body{
+
+}
+
+#resort-current-conditions-table{
+  width:30vw;
+}
+
+#resort-show-forecast{
+  margin-top: 5vh;
+}
+
+#resort-show-forecast-header{
+  border-radius: 7px 7px 0px 0px;
+  text-align:center;
+  background-color:#000066;
+  color:white;
+}
+#resort-show-forecast-body{
+  overflow: scroll;
+}
