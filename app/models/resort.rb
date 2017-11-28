@@ -15,7 +15,7 @@ class Resort < ApplicationRecord
             uniqueness: true
 
   def self.find_by_name(resort_name)
-    find_by(name: resort_name)
+    find_by(name: resort_name.gsub(/(?<=[a-z])(?=[A-Z])/, ' '))
   end
 
   def self.retrieve_all_data(resort_name)

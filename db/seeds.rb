@@ -25,7 +25,7 @@ class Seed
       [14, "Alta", "https://media.alta.com/resources/mtncam/altafull.jpg", "39", 3],
       [15, "Solitude", "https://webcams.solitudemountain.com/mbl.jpg?_ga=2.48813286.1553116106.1508883078-1005990490.1496752453&_gac=1.95231214.1508897104.CLHvrN3XitcCFYRGXgodDmMBHw", "38", 3],
       [16, "Snowbird", "https://www.snowbird.com/webcams/SnowCam_main.jpg", "40", 3],
-      [17, "Park City/Canyons", "http://common.snow.com/Mtncams/PCSnowStake.jpg", "41", 3],
+      [17, "Park City", "http://common.snow.com/Mtncams/PCSnowStake.jpg", "41", 3],
       [18, "Brighton", "http://www.brightonresort.com/img/Image/webcam/ww.jpg", "37", 3],
       [19, "Heavenly", "http://common.snow.com/Mtncams/HeavenlySnowStake.jpg", "135", 2],
       [20, "Kirkwood", "http://common.snow.com/Mtncams/kwSnowStake.jpg", "142", 2],
