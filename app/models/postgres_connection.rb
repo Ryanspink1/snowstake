@@ -7,5 +7,4 @@ class PostgresConnection
   def raw_sql(query)
     @connection.execute(query)
   end
-
 end

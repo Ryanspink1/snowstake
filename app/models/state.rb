@@ -18,7 +18,7 @@ class State < ApplicationRecord
             uniqueness: true
 
   def self.all_states
-    all
+    all.order(name: :asc)
   end
 
   def self.find_state_by_name(state_name)
