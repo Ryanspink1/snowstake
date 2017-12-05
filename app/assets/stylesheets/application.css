@@ -140,9 +140,18 @@ table, th, td{
 }
 
 #radar-container{
-  /*width:100%;
-  height: 75vh;
-  overflow: scroll;*/
+  overflow: scroll;
+  height: 65vh;
+  margin-left:8vw;
+  margin-right: 8vw;
+}
+
+/*#radar-modal{
+  height: 90vh;
+}*/
+
+#radar-modal-content{
+  /*height:75vh;*/
 }
 
 .toggle-container{
