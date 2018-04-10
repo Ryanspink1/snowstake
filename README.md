@@ -1,24 +1,70 @@
-# README
+# Snow Stake
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### About
+Snow Stake is an minimalistic, mobile oriented application built for winter sports enthusiasts to provide them quick and easy access to resort and highway weather conditions. The application relies primarily on the [OpenSnow API](https://opensnow.com/about/api), various DOT twitter feeds, and resort snow stake video feeds to give the user access to this. The application updates forecasts hourly, DOT feeds instantly, and snow stakes as they are updated by the resort.
 
-Things you may want to cover:
+## Getting Started Locally
+Follow these instructions to setup and serve Snow Stake locally.
 
-* Ruby version
+Clone & Setup environment:
+```
+git clone https://github.com/Ryanspink1/snowstake.git
+cd snowstake
+bundle exec install
+```
 
-* System dependencies
+Once bundled, the open_snow_key environment variable will need to be set. Currently, new OpenSnow API keys are not available to the public. More information about the OpenSnow API can be found [here](https://opensnow.com/about/api).
 
-* Configuration
+Set Token:
 
-* Database creation
+```
+# config/application.yml
+open_snow_key: #your_key
+```
 
-* Database initialization
+With the token configured, the database can now be created and populated via rake tasks.
+In your terminal:
 
-* How to run the test suite
+```
+#terminal
+rake db:create
+rake db:migrate
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+To populate with states, resorts, and forecasts:
 
-* Deployment instructions
+```
+#terminal
+rake db:seed
+```
 
-* ...
+To retrieve and update forecasts:
+
+```
+#terminal
+rake db:update_forecast
+```
+
+## Schema
+![alt text](https://i.imgur.com/jpwjf2m.png)
+
+## Testing
+
+Test suite (both rspec and selenium) may be run in the terminal:
+
+```
+#terminal
+rspec
+```
+
+## Built With
+- [Rails 5 Back-End](http://rubyonrails.org/)
+- [JavaScript populated front-end](https://www.javascript.com/)
+- [PostgreSQL database](https://www.postgresql.org/)
+
+
+## Author
+Ryan Spink (2017 - Current)
+
+## License
+This project is licensed under the MIT License.
