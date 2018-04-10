@@ -120,6 +120,7 @@ RSpec.describe State, type: :model do
         response = State.find_resorts(state.name)
 
         expect(response.first[0]).to eq(state.name)
+
         state_info = response["#{state.name}"]
 
         expect(state_info[:twitter]).to       eq(state.twitter_url)
